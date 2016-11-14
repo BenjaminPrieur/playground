@@ -2,7 +2,7 @@
 
 import Foundation
 
-func calculate(a: Int, _ b: Int, _ operation: (Int, Int) -> Int) -> Int {
+func calculate(_ a: Int, _ b: Int, _ operation: (Int, Int) -> Int) -> Int {
   return operation(a, b)
 }
 
@@ -19,7 +19,7 @@ print(calculate(3, 7, plus))
 print(calculate(3, 7, multiply))
 // > 21
 
-func showMessage(message: String, _ operation: (String) -> Void) {
+func showMessage(_ message: String, _ operation: (String) -> Void) {
   return operation(message)
 }
 
@@ -31,17 +31,17 @@ showMessage("coucou", showPrintedMessage)
 showMessage("coucou2", showPrintedMessage)
 
 
-enum UserError: ErrorType { case NoData, ParsingError }
+enum UserError: Error { case NoData, ParsingError }
 struct User {
   init(fromData: NSData) throws {
     throw UserError.ParsingError
   }
 }
 
-typealias UserBuilder = Void throws -> Void
-typealias CompletionVoidThrows = Void throws -> Void
+typealias UserBuilder = (Void) throws -> Void
+typealias CompletionVoidThrows = (Void) throws -> Void
 
-func fetchUser(completion: CompletionVoidThrows -> Void) {
+func fetchUser(completion: (CompletionVoidThrows) -> Void) {
 
   completion({ UserBuilder in
     let dataBrute: NSData? = NSData()

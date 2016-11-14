@@ -4,16 +4,16 @@ import Foundation
 import UIKit
 
 enum ViewState {
-  case Normal
-  case Highlighted
-  case Disabled
+  case normal
+  case highlighted
+  case disabled
 }
 
 struct StateValue<T> {
 
-  private let normal: T?
-  private let highlighted: T?
-  private let disabled: T?
+  fileprivate let normal: T?
+  fileprivate let highlighted: T?
+  fileprivate let disabled: T?
 
   init(normal: T? = nil, highlighted: T? = nil, disabled: T? = nil) {
     self.normal = normal
@@ -26,11 +26,11 @@ struct StateValue<T> {
 extension StateValue {
   subscript (state: ViewState) -> T? {
     switch state {
-    case .Normal:
+    case .normal:
       return normal
-    case .Highlighted:
+    case .highlighted:
       return highlighted
-    case .Disabled:
+    case .disabled:
       return disabled
     }
   }
@@ -38,9 +38,9 @@ extension StateValue {
 
 extension UIButton {
   func new_setTitleColor(stateValue: StateValue<UIColor>) {
-    setTitleColor(stateValue[.Normal], forState: .Normal)
-    setTitleColor(stateValue[.Highlighted], forState: .Highlighted)
-    setTitleColor(stateValue[.Disabled], forState: .Disabled)
+    setTitleColor(stateValue[.normal], for: .normal)
+    setTitleColor(stateValue[.highlighted], for: .highlighted)
+    setTitleColor(stateValue[.disabled], for: .disabled)
   }
 }
 
@@ -62,9 +62,9 @@ extension Vehicle: Stylable {
   var buttonColor: StateValue<UIColor>  {
     switch self {
     case .Car:
-      return StateValue(normal: .yellowColor(), highlighted: .blueColor(), disabled: .grayColor())
+      return StateValue(normal: .yellow, highlighted: .blue, disabled: .gray)
     case .Airplane:
-      return StateValue(normal: .purpleColor(), highlighted: .greenColor(), disabled: .redColor())
+      return StateValue(normal: .purple, highlighted: .green, disabled: .red)      
     }
   }
 }
@@ -72,10 +72,10 @@ extension Vehicle: Stylable {
 let vehicleButton = UIButton(frame: CGRect(x: 0, y: 0, width: 50, height: 50))
 
 func setTitleColorForStylableItem(stylable: Stylable) {
-  vehicleButton.new_setTitleColor(stylable.buttonColor)
+  vehicleButton.new_setTitleColor(stateValue: stylable.buttonColor)
 }
 
 let car = Vehicle.Car
-setTitleColorForStylableItem(car)
+setTitleColorForStylableItem(stylable: car)
 
 //: [Next](@next)

@@ -12,8 +12,8 @@ protocol ResultParsing {
 protocol StringParsing: ResultParsing { }
 
 extension StringParsing {
-  func parseData(data: NSData) -> String? {
-    return NSString(data: data, encoding: NSUTF8StringEncoding) as? String
+  func parseData(data: Data) -> String? {
+    return String(data: data, encoding: .utf8)
   }
 }
 

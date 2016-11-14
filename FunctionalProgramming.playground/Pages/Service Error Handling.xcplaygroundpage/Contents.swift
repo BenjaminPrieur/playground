@@ -6,17 +6,17 @@ import UIKit
 //mark: - Enum
 enum Result<T> {
   case Success(T)
-  case Failure(ErrorType)
+  case Failure(Error)
 }
 
 //mark: - Protocol
 protocol GenericService {
   associatedtype DataType
-  func get(completion: Result<DataType> -> Void)
+  func get(completion: (Result<DataType>) -> Void)
 }
 
 extension GenericService {
-  func get(completion: Result<DataType> -> Void) {
+  func get(completion: (Result<DataType>) -> Void) {
   }
 }
 
@@ -42,7 +42,7 @@ class DemoViewController: UIViewController {
     getElement(fromService: ItemService())
   }
 
-  func getElement<Service: GenericService where Service.DataType == [Item]>(fromService service: Service) {
+  func getElement<Service: GenericService>(fromService service: Service) where Service.DataType == [Item] {
     service.get() {[weak self] result in
 
       switch result {
@@ -63,7 +63,7 @@ struct MockItemService: GenericService {
   var getWasCalled = false
   var result = Result.Success([Item(), Item()])
 
-  mutating func get(completion: Result<DataType> -> Void) {
+  mutating func get(completion: (Result<DataType>) -> Void) {
     getWasCalled = true
     completion(result)
   }

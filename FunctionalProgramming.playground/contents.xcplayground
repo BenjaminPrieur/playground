@@ -2,7 +2,6 @@
 <playground version='6.0' target-platform='ios'>
     <pages>
         <page name='Untitled Page'/>
-        <page name='GenericProtocol'/>
         <page name='Retain Self Block'/>
         <page name='Service Error Handling'/>
         <page name='TypeSafe'/>
@@ -11,5 +10,6 @@
         <page name='Class Vs Struct'/>
         <page name='Memory Leaks &amp; Resource Managment'/>
         <page name='FlatMap sample'/>
+        <page name='Weak Ref Object'/>
     </pages>
 </playground>
