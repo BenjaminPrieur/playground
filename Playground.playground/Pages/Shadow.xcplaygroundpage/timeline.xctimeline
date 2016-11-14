@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Timeline
+   version = "3.0">
+   <TimelineItems>
+      <LoggerValueHistoryTimelineItem
+         documentLocation = "#CharacterRangeLen=0&amp;CharacterRangeLoc=1934&amp;EndingColumnNumber=9&amp;EndingLineNumber=60&amp;StartingColumnNumber=5&amp;StartingLineNumber=60&amp;Timestamp=492702872.257473"
+         selectedRepresentationIndex = "0"
+         shouldTrackSuperviewWidth = "NO">
+      </LoggerValueHistoryTimelineItem>
+      <LoggerValueHistoryTimelineItem
+         documentLocation = "#CharacterRangeLen=21&amp;CharacterRangeLoc=1487&amp;EndingColumnNumber=22&amp;EndingLineNumber=44&amp;StartingColumnNumber=1&amp;StartingLineNumber=44&amp;Timestamp=492702872.257709"
+         lockedSize = "{828, 635}"
+         selectedRepresentationIndex = "0"
+         shouldTrackSuperviewWidth = "NO">
+      </LoggerValueHistoryTimelineItem>
+      <LoggerValueHistoryTimelineItem
+         documentLocation = "#CharacterRangeLen=13&amp;CharacterRangeLoc=1921&amp;EndingColumnNumber=14&amp;EndingLineNumber=59&amp;StartingColumnNumber=1&amp;StartingLineNumber=59&amp;Timestamp=492702872.25791"
+         lockedSize = "{412, 242}"
+         selectedRepresentationIndex = "0"
+         shouldTrackSuperviewWidth = "NO">
+      </LoggerValueHistoryTimelineItem>
+   </TimelineItems>
+</Timeline>
