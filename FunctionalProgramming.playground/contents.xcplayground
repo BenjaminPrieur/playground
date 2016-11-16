@@ -11,5 +11,6 @@
         <page name='Memory Leaks &amp; Resource Managment'/>
         <page name='FlatMap sample'/>
         <page name='Weak Ref Object'/>
+        <page name='UserDefaultable'/>
     </pages>
 </playground>
