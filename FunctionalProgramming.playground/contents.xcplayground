@@ -12,5 +12,6 @@
         <page name='FlatMap sample'/>
         <page name='Weak Ref Object'/>
         <page name='UserDefaultable'/>
+        <page name='Composite Validator'/>
     </pages>
 </playground>
