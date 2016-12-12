@@ -15,5 +15,6 @@
         <page name='Composite Validator'/>
         <page name='CustomNavigationTransition'/>
         <page name='OptionSet'/>
+        <page name='TableViewPatterns'/>
     </pages>
 </playground>
