@@ -2,9 +2,6 @@
 
 import Foundation
 
-var str = "Hello, playground"
-
-
 class TestClass: Equatable {
   var string = "Coucou"
 }
