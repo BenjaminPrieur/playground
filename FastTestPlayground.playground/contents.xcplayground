@@ -1,4 +1,11 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<playground version='5.0' target-platform='ios'>
-    <timeline fileName='timeline.xctimeline'/>
+<playground version='6.0' target-platform='ios'>
+    <pages>
+        <page name='Untitled Page'/>
+        <page name='protocolInjection'/>
+        <page name='Untitled Page 2'/>
+        <page name='GraphicsTest'/>
+        <page name='DataSource'/>
+        <page name='PagerViewModel'/>
+    </pages>
 </playground>

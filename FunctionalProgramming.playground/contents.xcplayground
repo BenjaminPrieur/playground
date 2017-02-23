@@ -17,5 +17,6 @@
         <page name='OptionSet'/>
         <page name='TableViewPatterns'/>
         <page name='Caching the Cachables'/>
+        <page name='Snippet Tips'/>
     </pages>
 </playground>

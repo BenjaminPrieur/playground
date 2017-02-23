@@ -2,8 +2,7 @@
 
 import UIKit
 
-class Toto : NSObject {
-
+class Toto: NSObject {
 }
 
 class Test : Toto {
@@ -34,3 +33,19 @@ struct ProgrammingLanguage: OptionSet {
 
 let programmingLanguages: ProgrammingLanguage = [.swift, .scala]
 print(programmingLanguages.contains(.haskell))
+
+
+//var array = [Int](repeating: 0, count: 5)
+//print(unsafeAddressOf(array as AnyObject), terminator: "")
+//let newArray = array
+//print(unsafeAddressOf(newArray as AnyObject), terminator: "")
+//array[3] = 3
+//print(array)
+//print(newArray)
+
+let a = NSString(format: "Toto")
+var b = a
+b = "jack"
+print(a == b)
+
+var strings: [String] = []
