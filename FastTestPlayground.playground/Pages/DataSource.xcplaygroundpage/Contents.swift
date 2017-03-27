@@ -2,6 +2,46 @@
 
 import UIKit
 
+enum Result<T> {
+	case success(T)
+	case failure(Error)
+}
+
+class TileSection {}
+
+// *********************************************************************
+// MARK: - Manager
+
+class Manager {
+
+	func fetchLive(completion: @escaping (Result<TileSection>) -> Void) {
+		completion(.success(TileSection()))
+	}
+}
+
+// *********************************************************************
+// MARK: - Provider
+
+class Provider<T> {
+	func loadData(completion: @escaping (Result<T>) -> Void) {
+		fatalError("must be implemented")
+	}
+}
+
+class TileSectionProvider: Provider<[TileSection]> {
+
+	override func loadData(completion: @escaping (Result<[TileSection]>) -> Void) {
+		Manager().fetchLive { result in
+			switch result {
+			case .success(let tileSection):
+				completion(.success([tileSection]))
+			case .failure(let error):
+				completion(.failure(error))
+			}
+		}
+	}
+}
+
 // *********************************************************************
 // MARK: - Cell
 
@@ -28,7 +68,18 @@ protocol CustomDataSourceDelegate: class, ActionCellDelegate {
 class CustomDataSource: NSObject, UICollectionViewDataSource {
 
 	weak var delegate: CustomDataSourceDelegate?
-//	var items: [String: [Any]]
+	var items: [TileSection] = []
+	var provider: Provider<[TileSection]>
+
+	init(provider: Provider<[TileSection]>) {
+		self.provider = provider
+	}
+
+	func loadData() {
+		provider.loadData { result in
+
+		}
+	}
 
 	func numberOfSections(in collectionView: UICollectionView) -> Int {
 		return 0
@@ -60,5 +111,9 @@ class ViewController: UIViewController, CustomDataSourceDelegate {
 	}
 
 }
+
+let provider = TileSectionProvider()
+let dataSource = CustomDataSource(provider: provider)
+dataSource.loadData()
 
 //: [Next](@next)

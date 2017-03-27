@@ -7,5 +7,8 @@
         <page name='GraphicsTest'/>
         <page name='DataSource'/>
         <page name='PagerViewModel'/>
+        <page name='BlurModalViewController'/>
+        <page name='Safeguarding equatable'/>
+        <page name='Mock URLSession'/>
     </pages>
 </playground>

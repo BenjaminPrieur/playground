@@ -18,5 +18,6 @@
         <page name='TableViewPatterns'/>
         <page name='Caching the Cachables'/>
         <page name='Snippet Tips'/>
+        <page name='Kind of enum'/>
     </pages>
 </playground>
