@@ -10,5 +10,10 @@
         <page name='BlurModalViewController'/>
         <page name='Safeguarding equatable'/>
         <page name='Mock URLSession'/>
+        <page name='FirstLaunch'/>
+        <page name='Optional+Required'/>
+        <page name='CustomizeErrorMsg'/>
+        <page name='InjectMethod'/>
+        <page name='CaclculCredit'/>
     </pages>
 </playground>

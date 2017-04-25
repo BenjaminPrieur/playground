@@ -49,3 +49,19 @@ b = "jack"
 print(a == b)
 
 var strings: [String] = []
+
+// *********************************************************************
+// MARK: - Test constraint
+
+let view = UIView()
+let tableView = UITableView()
+
+view.addSubview(tableView)
+
+NSLayoutConstraint.activate([
+	tableView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+	tableView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+	tableView.topAnchor.constraint(equalTo: view.topAnchor),
+	tableView.bottomAnchor.constraint(equalTo: view.bottomAnchor),
+])
+
