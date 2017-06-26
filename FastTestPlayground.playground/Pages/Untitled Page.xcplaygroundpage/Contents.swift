@@ -64,4 +64,3 @@ NSLayoutConstraint.activate([
 	tableView.topAnchor.constraint(equalTo: view.topAnchor),
 	tableView.bottomAnchor.constraint(equalTo: view.bottomAnchor),
 ])
-

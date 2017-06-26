@@ -42,4 +42,7 @@ public extension Optional {
 	}
 }
 
+var superOptional: String?
+superOptional.require(hint: "This String is required")
+
 //: [Next](@next)

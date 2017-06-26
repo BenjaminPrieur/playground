@@ -15,5 +15,16 @@
         <page name='CustomizeErrorMsg'/>
         <page name='InjectMethod'/>
         <page name='CaclculCredit'/>
+        <page name='Reusable'/>
+        <page name='Namespacing'/>
+        <page name='Sequence &amp; Collection'/>
+        <page name='NavigationCoordinator'/>
+        <page name='PullToDismiss'/>
+        <page name='ArrayWeakReferences'/>
+        <page name='CompositionDependencyInjection'/>
+        <page name='Untitled Page 3'/>
+        <page name='GCD'/>
+        <page name='Untitled Page 4'/>
+        <page name='MeetupInjection'/>
     </pages>
 </playground>

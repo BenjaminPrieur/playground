@@ -10,6 +10,28 @@ extension Double {
 
 // Capital * ( interet / (1 - (1+interet)-nombreDeMois)
 
+struct CreditCalculator {
+
+	func amortissement(credit: Credit) {
+		if	credit.capital > 0 {
+			let interet = credit.capital * credit.txPer
+			let mensualite = credit.capital * (credit.txPer / (1 - pow(1 + credit.txPer, Double(-credit.nbMonth)))) + credit.assurance
+			let amort = mensualite - interet - credit.assurance
+			let newCapital = max(0, credit.capital - amort)
+
+			print("\(credit.nbMonth) Base: \(credit.capital.string)" +
+				"\t- interet: \(interet.string)" +
+				"\t- assurance: \(credit.assurance.string)" +
+				"\t- mensualite: \(mensualite.string)" +
+				"\t- amortissement: \(amort.string)" +
+				"\t- new capital: \(newCapital.string)")
+
+			let newCredit = Credit(capital: newCapital, txAn: credit.txAn, nbMonth: credit.nbMonth-1, txAssurance: credit.txAssurance, assurance: credit.assurance)
+			amortissement(credit: newCredit)
+		}
+	}
+}
+
 struct Credit {
 
 	let capital: Double
@@ -26,37 +48,17 @@ struct Credit {
 		self.init(capital: capital, txAn: txAn, nbMonth: nbAn * 12, txAssurance: txAssurance)
 	}
 
-	init(capital: Double, txAn: Double, nbMonth: Int, txAssurance: Double) {
+	init(capital: Double, txAn: Double, nbMonth: Int, txAssurance: Double, assurance: Double? = nil) {
 		self.capital = capital
 		self.txAn = txAn
 		self.nbMonth = nbMonth
 		self.txPer = txAn / echAn
 		self.txAssurance = txAssurance
-		self.assurance = capital * (txAssurance/12)
+		self.assurance = assurance ?? capital * (txAssurance/12)
 	}
-
-	func amortissement(credit: Credit) {
-		if	credit.capital > 0 {
-			let interet = credit.capital * credit.txPer
-			let mensualite = credit.capital * (credit.txPer / (1 - pow(1 + credit.txPer, Double(-credit.nbMonth)))) + assurance
-			let amort = mensualite - interet - assurance
-			let newCapital = max(0, credit.capital - amort)
-
-			print("\(credit.nbMonth) Base: \(credit.capital.string)" +
-				"\t- interet: \(interet.string)" +
-				"\t- assurance: \(assurance.string)" +
-				"\t- mensualite: \(mensualite.string)" +
-				"\t- amortissement: \(amort.string)" +
-				"\t- new capital: \(newCapital.string)")
-
-			let newCredit = Credit(capital: newCapital, txAn: credit.txAn, nbMonth: credit.nbMonth-1, txAssurance: txAssurance)
-			amortissement(credit: newCredit)
-		}
-	}
-
 }
 
 let credit = Credit(capital: 500_000, txAn: 0.015, nbAn: 20, txAssurance: 0.0036)
-credit.amortissement(credit: credit)
+CreditCalculator().amortissement(credit: credit)
 
 //: [Next](@next)
