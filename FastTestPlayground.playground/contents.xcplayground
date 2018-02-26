@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<playground version='6.0' target-platform='ios'>
+<playground version='6.0' target-platform='ios' executeOnSourceChanges='false'>
     <pages>
         <page name='Untitled Page'/>
         <page name='protocolInjection'/>
@@ -22,9 +22,26 @@
         <page name='PullToDismiss'/>
         <page name='ArrayWeakReferences'/>
         <page name='CompositionDependencyInjection'/>
-        <page name='Untitled Page 3'/>
         <page name='GCD'/>
-        <page name='Untitled Page 4'/>
-        <page name='MeetupInjection'/>
+        <page name='Layer with auto layout'/>
+        <page name='Map Dictionary'/>
+        <page name='Struct References'/>
+        <page name='animateKeyframesWithDuration'/>
+        <page name='Declarative Animation'/>
+        <page name='DispatchWorkItem'/>
+        <page name='AsynTest'/>
+        <page name='Visitor Pattern'/>
+        <page name='Decorator Pattern'/>
+        <page name='Adapter Pattern'/>
+        <page name='FirstClassFunc'/>
+        <page name='PRism'/>
+        <page name='SmartExtensions'/>
+        <page name='EnumComposition'/>
+        <page name='Override extension'/>
+        <page name='PointFree'/>
+        <page name='UIViewPropertyAnimator'/>
+        <page name='SpotifyArchi'/>
+        <page name='Coordinator Pattern'/>
+        <page name='ImageLoader'/>
     </pages>
 </playground>
