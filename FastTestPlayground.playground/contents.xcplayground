@@ -36,12 +36,13 @@
         <page name='FirstClassFunc'/>
         <page name='PRism'/>
         <page name='SmartExtensions'/>
-        <page name='EnumComposition'/>
+        <page name='EnumPower'/>
         <page name='Override extension'/>
-        <page name='PointFree'/>
+        <page name='PointFree TutoVideo'/>
         <page name='UIViewPropertyAnimator'/>
         <page name='SpotifyArchi'/>
         <page name='Coordinator Pattern'/>
         <page name='ImageLoader'/>
+        <page name='MultipartRequests'/>
     </pages>
 </playground>

@@ -11,7 +11,7 @@ enum Result<T> {
 protocol ImageLoader {
 	typealias Handler = (Result<UIImage>) -> Void
 
-	func loadImage(from url: URL, then handler: Handler)
+	func loadImage(from url: URL, then handler: @escaping Handler)
 }
 
 class ImageLoaderFactory {
@@ -28,6 +28,7 @@ class ImageLoaderFactory {
 
 private extension ImageLoaderFactory {
 	class SessionImageLoader: ImageLoader {
+
 		let session: URLSession
 		private var ongoingRequest = Set<Request>()
 
@@ -39,15 +40,28 @@ private extension ImageLoaderFactory {
 			cancelAllRequests()
 		}
 
-		func loadImage(from url: URL, then handler: Handler) {
+		func loadImage(from url: URL, then handler: @escaping Handler) {
 			let request = Request(url: url, handler: handler)
-			perform(request)
+//			perform(request)
 		}
 
 		func cancelAllRequests() {
 //			ongoingRequest
 		}
 	}
+}
+
+struct Request: Hashable {
+	var url: URL
+	var handler: (Result<UIImage>) -> Void
+
+	var hashValue: Int {
+		return url.hashValue
+	}
+}
+
+func ==(lhs: Request, rhs: Request) -> Bool {
+	return lhs.url == rhs.url
 }
 
 //: [Next](@next)
