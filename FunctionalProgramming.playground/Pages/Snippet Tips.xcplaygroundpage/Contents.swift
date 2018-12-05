@@ -33,8 +33,8 @@ extension Describable {
 
 extension Describable where Self: NSObjectProtocol {
 	var typeName: String {
-		let type = type(of: self)
-		return String(describing: type)
+//        let type = type(of: self)
+		return String(describing: self)
 	}
 }
 

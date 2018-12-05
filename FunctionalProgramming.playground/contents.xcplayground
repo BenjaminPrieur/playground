@@ -19,5 +19,10 @@
         <page name='Caching the Cachables'/>
         <page name='Snippet Tips'/>
         <page name='Kind of enum'/>
+        <page name='Strongly typed Info Plist'/>
+        <page name='Delegate vs Closure'/>
+        <page name='Type Inference'/>
+        <page name='AsyncTestWrapper'/>
+        <page name='TestRetainCycle'/>
     </pages>
 </playground>

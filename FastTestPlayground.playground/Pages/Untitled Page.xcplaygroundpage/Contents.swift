@@ -64,29 +64,3 @@ NSLayoutConstraint.activate([
 	tableView.topAnchor.constraint(equalTo: view.topAnchor),
 	tableView.bottomAnchor.constraint(equalTo: view.bottomAnchor),
 ])
-
-
-class APM {
-	var conf: String
-	init(conf: String) {
-		self.conf = conf
-	}
-}
-
-let apm = APM(conf: "FirstConf")
-
-class Manager {
-	var conf: String
-	init(conf: String) {
-		self.conf = conf
-	}
-}
-
-var aManager = Manager(conf: apm.conf)
-var bManager = Manager(conf: apm.conf)
-
-apm.conf = "SecondConf"
-
-print(aManager.conf == bManager.conf)
-print(aManager.conf == apm.conf)
-

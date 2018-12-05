@@ -60,7 +60,7 @@ class CompilerWarning : DoesSomething {
  */
 class MemoryLeak1 : DoesSomething {
   var message = "will not deinit"
-  var closure : ((Void) -> Void)!
+  var closure: (() -> Void)!
 
   func doSomething() {
     closure = {
@@ -79,8 +79,7 @@ class MemoryLeak1 : DoesSomething {
  */
 class MemoryLeak2 : DoesSomething {
   var message = "will not deinit"
-  var closure : ((Void) -> Void)!
-
+  var closure: (() -> Void)!
 
   func doSomething() {
     func doSomethingElse() {
@@ -103,8 +102,7 @@ class MemoryLeak2 : DoesSomething {
  */
 class SafeNestedFunctionWeakVar : DoesSomething {
   var message = "will not deinit"
-  var closure : ((Void) -> Void)!
-
+  var closure: (() -> Void)!
 
   func doSomething() {
     weak var weakSelf = self
@@ -128,8 +126,7 @@ class SafeNestedFunctionWeakVar : DoesSomething {
  */
 class WeakSelfClosure : DoesSomething {
   var message = "will deinit"
-  var closure : ((Void) -> Void)!
-
+  var closure: (() -> Void)!
 
   func doSomething() {
     closure = { [weak self] in
@@ -152,7 +149,7 @@ class NoAssignementNestedFunction : DoesSomething {
   let mappable = [1]
 
   func doSomething() {
-    func closure(number:Int) {
+    func closure(number: Int) {
       print(self.message)
     }
 
@@ -173,7 +170,7 @@ class SafeInlineClosure : DoesSomething {
   let mappable = [1]
 
   func doSomething() {
-    mappable.map{_ in
+    mappable.map {_ in
       print(self.message)
     }
   }
@@ -183,7 +180,7 @@ class SafeInlineClosure : DoesSomething {
   }
 }
 
-var example : DoesSomething?
+var example: DoesSomething?
 
 example = CompilerWarning()
 example!.doSomething()
