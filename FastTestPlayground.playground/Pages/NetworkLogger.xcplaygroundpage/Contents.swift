@@ -8,7 +8,7 @@ PlaygroundPage.current.needsIndefiniteExecution = true
 /// A custom protocol for logging outgoing requests.
 final class PrintProtocol: URLProtocol {
 
-    override open class func canInit(with request: URLRequest) -> Bool {
+    override public class func canInit(with request: URLRequest) -> Bool {
         // Print valuable request information.
         print("🚀 Running request: \(request.httpMethod ?? "") - \(request.url?.absoluteString ?? "")")
 

@@ -21,7 +21,7 @@ public extension Bundle {
 			// Since flatMap returns a new sequence of all non-nil
 			// values returned from its closure, it lets us automatically
 			// skip all files that don't exist.
-			.flatMap({ name in
+            .compactMap({ name in
 				return url(forResource: name, withExtension: nil)
 			})
 			.map(Data.init)

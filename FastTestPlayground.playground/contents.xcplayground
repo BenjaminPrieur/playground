@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<playground version='6.0' target-platform='ios'>
+<playground version='6.0' target-platform='ios' executeOnSourceChanges='true'>
     <pages>
         <page name='Untitled Page'/>
         <page name='protocolInjection'/>
@@ -51,5 +51,9 @@
         <page name='Avoiding race conditions'/>
         <page name='ReachabilityService'/>
         <page name='Injection Function'/>
+        <page name='PowerFullReusableExtensions'/>
+        <page name='RuleBasedLogic'/>
+        <page name='Extension VS method combine'/>
+        <page name='Result'/>
     </pages>
 </playground>
