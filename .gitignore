@@ -1,6 +1,4 @@
 # Xcode
-#
-# gitignore contributors: remember to update Global/Xcode.gitignore, Objective-C.gitignore & Swift.gitignore
 
 ## Build generated
 build/
@@ -24,10 +22,3 @@ xcuserdata
 *.xcscmblueprint
 .idea/
 .DS_Store
-
-## Obj-C/Swift specific
-*.hmap
-*.ipa
-
-Wallet.xcodeproj/project.xcworkspace
-Gemfile.lock
