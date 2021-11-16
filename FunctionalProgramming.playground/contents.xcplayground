@@ -25,5 +25,7 @@
         <page name='AsyncTestWrapper'/>
         <page name='TestRetainCycle'/>
         <page name='CustomPatterns'/>
+        <page name='DependencyInjection with PropertyWrapper'/>
+        <page name='Concurrency'/>
     </pages>
 </playground>
