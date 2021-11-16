@@ -50,12 +50,12 @@ class AppInjector {
 		addDependency(object)
 	}
 
-	func inject<T>() throws -> T! {
+	func inject<T>() throws -> T {
 		let key = DefinitionKey(protocolType: T.self)
-		guard let dependency = dependencies[key] else {
+		guard let dependency = dependencies[key] as? T else {
 			throw InjectorError.unknownDependency
 		}
-		return dependency as! T
+		return dependency
 	}
 }
 
@@ -66,7 +66,6 @@ class AppInjector {
 protocol Service {
 	func test() -> String
 }
-protocol Client: class {}
 
 class ServiceBis: Service {
 	func test() -> String {
@@ -78,6 +77,8 @@ class ServiceImp: Service {
 		return "Imp"
 	}
 }
+
+protocol Client: AnyObject {}
 class ClientImp: Client {}
 
 AppInjector.shared.addDependency(ServiceBis())
