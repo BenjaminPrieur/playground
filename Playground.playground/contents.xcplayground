@@ -5,5 +5,7 @@
         <page name='Specialize'/>
         <page name='BezierPath'/>
         <page name='Shadow'/>
+        <page name='PhantomTypes'/>
+        <page name='RecursiveEnumCase'/>
     </pages>
 </playground>
