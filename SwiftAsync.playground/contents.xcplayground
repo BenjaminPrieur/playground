@@ -3,5 +3,6 @@
     <pages>
         <page name='QuakesTool'/>
         <page name='URLSession'/>
+        <page name='CombineAsyncStream'/>
     </pages>
 </playground>

@@ -9,7 +9,10 @@ enum FetchError: Error {
 }
 
 func fetch(url: URL) async throws -> Image {
-  let (data, response) = try await URLSession.shared.data(from: url)
+  let (data, response) = try await URLSession.shared.data(
+    from: url,
+    delegate: AuthenticationDelegate()
+  )
 
   guard let httpResponse = response as? HTTPURLResponse, httpResponse.statusCode == 200 else {
     throw FetchError.invliadServerResponse
@@ -30,6 +33,24 @@ Task {
     print(image)
   } catch let err {
     print("Error: \(err)")
+  }
+}
+
+class AuthenticationDelegate: NSObject, URLSessionTaskDelegate {
+  func urlSession(_ session: URLSession, task: URLSessionTask, didReceive challenge: URLAuthenticationChallenge) async -> (URLSession.AuthChallengeDisposition, URLCredential?) {
+    if challenge.protectionSpace.authenticationMethod == NSURLAuthenticationMethodHTTPBasic {
+      do {
+//        let (username, password) = try await signInController.promptForCredential()
+        return (
+          .useCredential,
+          URLCredential(user: "username", password: "password", persistence: .forSession)
+        )
+      } catch {
+        return (.cancelAuthenticationChallenge, nil)
+      }
+    } else {
+      return (.performDefaultHandling, nil)
+    }
   }
 }
 
